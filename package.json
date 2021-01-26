@@ -1,0 +1,28 @@
+{
+  "name": "npm-package-name",
+  "version": "1.0.0",
+  "description": "A simple CLI tool to check for package name availability on npm registry",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IAmMasterCraft/npm-package-name.git"
+  },
+  "keywords": [
+    "CLI",
+    "npm"
+  ],
+  "author": "MasterCraft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IAmMasterCraft/npm-package-name/issues"
+  },
+  "homepage": "https://github.com/IAmMasterCraft/npm-package-name#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "prompt": "^1.1.0",
+    "simple-api-wrapper": "^1.1.2"
+  }
+}
