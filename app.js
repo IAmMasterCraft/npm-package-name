@@ -8,8 +8,8 @@ const intro = () => {
     console.log(
         colors.green(
             `
-            ***************************************************************************************************************\n
-            ***************************************************************************************************************\n
+            *****************************************************************************************************\n
+            *****************************************************************************************************\n
             This CLI tool is pretty easy and simple to use\n
             BUT....\n
             if you see anything that looks like:\n
@@ -18,8 +18,8 @@ const intro = () => {
             But if it is something like:\n
             'Request failed with status code 404'\n
             Then that's a good news, package name is available!\n
-            ***************************************************************************************************************\n
-            ***************************************************************************************************************\n\n\n\n\n\n\n
+            *****************************************************************************************************\n
+            *****************************************************************************************************\n\n\n\n\n\n\n
             `
         )
     );
@@ -33,7 +33,7 @@ const handleError = (error) => {
 const retry = () => {
     console.log(colors.yellow.underline("Try again?"));
     prompt.get(['restart'], (err, result) => {
-        if (err) { return handleError(error); }
+        if (err) { return handleError(err); }
         // console.log(colors.green('Input received . . .'));
         if (result.restart.toLowerCase().includes("y"))
             startTool();
@@ -68,10 +68,10 @@ const checkName = (name) => {
 const startTool = () => {
     console.log(colors.green("Welcome!\nPlease enter the name you want to check"));
     prompt.get(['packageName'], (err, result) => {
-        if (err) { return handleError(error); }
+        if (err) { return handleError(err); }
         // console.log(colors.green('Input received . . .'));
         console.log(colors.green(`Checking for the availability of ${colors.yellow.bold.underline(result.packageName)} . . .`));
-        checkName(result.packageName);
+        checkName(result.packageName.replace(/ /g, "-"));
     });
 }
 
